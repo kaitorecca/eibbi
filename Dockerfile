@@ -131,7 +131,7 @@ RUN echo "Download patches and dependencies..." \
 # Customize configuration to enhance security
 
 RUN rm -f /biserver-ce/tomcat/webapps/pentaho/WEB-INF/lib/pentaho-platform-extensions-7.1.0.5-70.jar
-	&& rm -f /biserver-ce/tomcat/conf/server.xml
+RUN rm -f /biserver-ce/tomcat/conf/server.xml
 COPY pentaho-platform-extensions-7.1-SNAPSHOT.jar /biserver-ce/tomcat/webapps/pentaho/WEB-INF/lib/pentaho-platform-extensions-7.1-SNAPSHOT.jar
 COPY server.xml /biserver-ce/tomcat/conf/server.xml
 
