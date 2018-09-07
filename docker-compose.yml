@@ -2,7 +2,7 @@ version: '2'
 
 services:
   biserver:
-    image: zhicwu/biserver-ce${BI_IMAGE_TAG}
+    image: hongtai91/eibbi:latest
     hostname: ${SERVER_HOST}
     container_name: ${BI_CONTAINER_NAME}
     command: biserver
@@ -41,3 +41,12 @@ services:
         soft: 65535
         hard: 65535
     restart: always
+    networks:
+      - opt_default
+    external_link:
+      - nginx-ssl-proxy-bi
+      - mariadb
+      - sslbi-nginx-ssl-proxy-bi_1
+networks:
+  opt_default:
+    external: true
