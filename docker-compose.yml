@@ -43,7 +43,7 @@ services:
     restart: always
     networks:
       - opt_default
-    external_link:
+    external_links:
       - nginx-ssl-proxy-bi
       - mariadb
       - sslbi-nginx-ssl-proxy-bi_1
